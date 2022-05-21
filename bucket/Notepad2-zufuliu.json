@@ -1,12 +1,21 @@
 {
-  "homepage": "https://github.com/zufuliu/notepad2",
-  "license": "BSD 3-Clause",
-  "version": "v4.22.05r4220",
-  "url": "https://github.com/zufuliu/notepad2/releases/download/v4.22.05r4220/Notepad2_zh-Hant_AVX2_v4.22.05r4220.zip",
-  "hash": "cb26c40c0bb2a95a885e25c1b5cf8e2ef484ba26f1a226cc3246ec6658e92b4f",
-  "bin": "Notepad2.exe",
-  "checkver": "github",
-  "autoupdate": {
-    "url": "https://github.com/zufuliu/notepad2/releases/download/$version/Notepad2_zh-Hant_AVX2_$version.zip"
-  }
+    "homepage": "https://github.com/zufuliu/notepad2",
+    "license": "BSD 3-Clause",
+    "version": "v4.22.05r4220",
+    "url": "https://github.com/zufuliu/notepad2/releases/download/v4.22.05r4220/Notepad2_zh-Hant_AVX2_v4.22.05r4220.zip",
+    "hash": "cb26c40c0bb2a95a885e25c1b5cf8e2ef484ba26f1a226cc3246ec6658e92b4f",
+    "bin": ["Notepad2.exe", "minipath.exe"],
+    "shortcuts": [
+        ["Notepad2.exe", "Notepad2"],
+        ["minipath.exe", "minipath"]
+    ],
+    "persist":[
+      "Notepad2.ini",
+      "metapath.ini",
+      "Notepad2 DarkTheme.ini"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/zufuliu/notepad2/releases/download/$version/Notepad2_zh-Hant_AVX2_$version.zip"
+    }
 }
