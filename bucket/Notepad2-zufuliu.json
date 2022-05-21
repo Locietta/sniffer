@@ -8,6 +8,5 @@
   "checkver": "github",
   "autoupdate": {
     "url": "https://github.com/zufuliu/notepad2/releases/download/$version/Notepad2_zh-Hant_AVX2_$version.zip"
-  },
-  "depends": ""
+  }
 }
