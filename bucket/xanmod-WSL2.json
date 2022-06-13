@@ -1,0 +1,16 @@
+{
+    "homepage": "https://github.com/Locietta/xanmod-kernel-WSL2",
+    "license": "MIT",
+    "extract_dir": "",
+    "bin": "",
+    "version": "5.18.3",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.18.3-xanmod1-locietta-WSL2/bzImage",
+    "hash": "c8943b2f843d9fdd21ec2811b7cc385aff39340f6e01db76208741497511501a",
+    "checkver": {
+        "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
+        "regex": "([\\d.]+)-xanmod1-locietta-WSL2"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/$version-xanmod1-locietta-WSL2/bzImage"
+    }
+}
