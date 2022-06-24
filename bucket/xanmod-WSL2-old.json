@@ -3,9 +3,9 @@
     "license": "MIT",
     "extract_dir": "",
     "bin": "",
-    "version": "5.18.4",
-    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.18.4-xanmod1-locietta-WSL2/bzImage-old",
-    "hash": "e86c865acb3ff975a68b135e0b762f392d751495d96b07a4ae0d260a2536c907",
+    "version": "5.18.6",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.18.6-xanmod1-locietta-WSL2/bzImage-old",
+    "hash": "dbcaff1f486735c29826ad6ca1547d0b8da5fda8a353d0405ce58d4e7809ea3e",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
         "regex": "([\\d.]+)-xanmod1-locietta-WSL2"
