@@ -3,7 +3,7 @@
     "license": "MIT",
     "extract_dir": "",
     "bin": "",
-    "version": "5.18.10",
+    "version": "5.18.11",
     "post_install": [
         "#########################################",
         "# set `.wslconfig` to use custom kernel #",
@@ -29,8 +29,8 @@
         "\"@ -passthru -name MyPrivateProfileString -UsingNamespace System.Text",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
-    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.18.10-xanmod1-locietta-WSL2/bzImage-old",
-    "hash": "2977ea615e77014253ff959077ed2012296d8bb421d3258ddbe061a676bd2f3b",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.18.11-xanmod1-locietta-WSL2/bzImage-old",
+    "hash": "ce8e6d783ec6e0cba63165220fc8d1273aca7ebeecd7c5d0f31ee77c29d620a8",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
         "regex": "([\\d.]+)-xanmod1-locietta-WSL2"
