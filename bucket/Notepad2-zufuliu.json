@@ -1,18 +1,27 @@
 {
     "homepage": "https://github.com/zufuliu/notepad2",
     "license": "BSD 3-Clause",
-    "version": "4.22.05r4220",
-    "url": "https://github.com/zufuliu/notepad2/releases/download/v4.22.05r4220/Notepad2_i18n_AVX2_v4.22.05r4220.zip",
-    "hash": "295f869f991fa3bd653af86eb09958d9a26d667aabb7dc46f2358df0f3d91b2a",
-    "bin": ["Notepad2.exe", "metapath.exe"],
-    "shortcuts": [
-        ["Notepad2.exe", "Notepad2"],
-        ["metapath.exe", "metapath"]
+    "version": "4.22.07r4278",
+    "url": "https://github.com/zufuliu/notepad2/releases/download/v4.22.07r4278/Notepad2_i18n_AVX2_v4.22.07r4278.zip",
+    "hash": "a1b8d3750ad19a17af6bfb777f87c42dda68d6740c99ca974fbb83000dfb0d64",
+    "bin": [
+        "Notepad2.exe",
+        "metapath.exe"
     ],
-    "persist":[
-      "Notepad2.ini",
-      "metapath.ini",
-      "Notepad2 DarkTheme.ini"
+    "shortcuts": [
+        [
+            "Notepad2.exe",
+            "Notepad2"
+        ],
+        [
+            "metapath.exe",
+            "metapath"
+        ]
+    ],
+    "persist": [
+        "Notepad2.ini",
+        "metapath.ini",
+        "Notepad2 DarkTheme.ini"
     ],
     "checkver": {
         "github": "https://github.com/zufuliu/notepad2",
