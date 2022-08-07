@@ -33,9 +33,10 @@
     "hash": "1f2fc4e98af09cfb3dc2118ccf8679c56ee1c96f73ece3a40d0ab853a6eeb9ae",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
-        "regex": "([\\d.]+)-xanmod1-locietta-WSL2"
+        "regex": "(?<main>[\\d.]+)-xanmod(?<xanmod>[\\d]+)-locietta-WSL2",
+        "replace": "${1}-${2}"
     },
     "autoupdate": {
-        "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/$version-xanmod1-locietta-WSL2/bzImage-skylake"
+        "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/$matchMain-xanmod$matchXanmod-locietta-WSL2/bzImage-skylake"
     }
 }
