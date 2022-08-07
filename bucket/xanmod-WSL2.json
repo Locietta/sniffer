@@ -37,6 +37,9 @@
         "replace": "${1}-${2}"
     },
     "autoupdate": {
-        "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/$matchMain-xanmod$matchXanmod-locietta-WSL2/bzImage"
+        "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/$matchMain-xanmod$matchXanmod-locietta-WSL2/bzImage",
+        "hash": {
+            "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/$matchMain-xanmod$matchXanmod-locietta-WSL2/bzImage.sha256"
+        }
     }
 }
