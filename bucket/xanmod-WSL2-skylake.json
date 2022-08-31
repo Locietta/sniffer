@@ -28,9 +28,9 @@
         "\"@ -passthru -name MyPrivateProfileString -UsingNamespace System.Text",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
-    "version": "5.19.4-1",
-    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.19.4-xanmod1-locietta-WSL2/bzImage-skylake",
-    "hash": "eefaf314f65d147f04e239cffeb643fcfab4a39ff035a5c61139ebd0a702e51d",
+    "version": "5.19.5-1",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/5.19.5-xanmod1-locietta-WSL2/bzImage-skylake",
+    "hash": "53cfa4e7493243ce46313d3194a2c2c4c4bd15bec1731408056544508e6ac7b7",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
         "regex": "(?<main>[\\d.]+)-xanmod(?<xanmod>[\\d]+)-locietta-WSL2",
