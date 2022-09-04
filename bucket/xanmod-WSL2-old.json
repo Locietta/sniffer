@@ -3,7 +3,7 @@
     "license": "MIT",
     "extract_dir": "",
     "bin": "",
-    "version": "5.19.6-1",
+    "version": "5.19.5-1",
     "post_install": [
         "#########################################",
         "# set `.wslconfig` to use custom kernel #",
