@@ -3,7 +3,6 @@
     "license": "MIT",
     "extract_dir": "",
     "bin": "",
-    "version": "6.0.3-1",
     "post_install": [
         "#########################################",
         "# set `.wslconfig` to use custom kernel #",
@@ -13,7 +12,7 @@
         "public static extern long WritePrivateProfileString (string section,string key, string val, string filePath);",
         "[DllImport(\"Kernel32\")]",
         "public static extern int GetPrivateProfileString (string section, string key, string def, StringBuilder retVal, int size, string filePath);",
-        "\"@ -passthru -name MyPrivateProfileString -UsingNamespace System.Text",
+        "\"@ -passthru -name CustomWSL2ProfileInstall -UsingNamespace System.Text",
         "$kernel_path=\"$dir\\bzImage-old\" -replace \"\\\\\", \"\\\\\" # double all back-slashess",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $kernel_path, \"$env:USERPROFILE\\.wslconfig\")"
     ],
@@ -26,9 +25,10 @@
         "public static extern long WritePrivateProfileString (string section, string key, string val, string filePath);",
         "[DllImport(\"Kernel32\")]",
         "public static extern int GetPrivateProfileString (string section, string key, string def, StringBuilder retVal, int size, string filePath);",
-        "\"@ -passthru -name MyPrivateProfileString -UsingNamespace System.Text",
+        "\"@ -passthru -name CustomWSL2ProfileUninstall -UsingNamespace System.Text",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
+    "version": "6.0.3-1",
     "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.0.3-locietta-WSL2-xanmod1/bzImage-old",
     "hash": "4b69f324d29a8870289f74f9e9d1a70bab4058e01386ed648c7027b54e408803",
     "checkver": {
