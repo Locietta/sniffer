@@ -33,7 +33,7 @@
     "hash": "c6e6958b7d22465016c3446e2dad764981b55dafecc140608ef4833aea3058bb",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
-        "regex": "(?<main>[\\d.]+)-locietta-WSL2-xanmod(?<xanmod>[\\d]+)",
+        "regex": "(?<main>[\\d.]+)-locietta-WSL2-xanmod(?<xanmod>[\\d.]+)",
         "replace": "${1}-${2}"
     },
     "autoupdate": {
