@@ -7,8 +7,18 @@
     "hash": "ca783f4b75bbb6c4116b0938d7c37a654540346950f426e9ed2662b0fc75cea6",
     "bin": "HMCL.exe",
     "pre_install": "Rename-Item \"$dir\\HMCL-$version.exe\" -NewName \"$dir\\HMCL.exe\"",
+    "post_install": [
+        "if (Test-Path \"$persist_dir\\hmcl.json\") {",
+        "    Copy-Item -Path \"$persist_dir\\hmcl.json\" -Destination \"$dir\\hmcl.json\"",
+        "}"
+    ],
     "shortcuts": [["HMCL.exe", "HMCL"]],
-    "persist": ".minecraft",
+    "persist": [".minecraft"],
+    "pre_uninstall": [
+        "if (Test-Path \"$dir\\hmcl.json\") {",
+        "Copy-Item -Path \"$dir\\hmcl.json\" -Destination \"$persist_dir\\hmcl.json\"",
+        "}"
+    ],
     "checkver": {
         "github": "https://github.com/huanghongxun/HMCL"
     },
