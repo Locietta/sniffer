@@ -30,7 +30,7 @@
     ],
     "version": "6.0.9-1.1",
     "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.0.9-locietta-WSL2-xanmod1.1/bzImage",
-    "hash": "cb3411641c0c11e94db92805eb69731f3eb76e2cf8a6a3184879ad6762553652",
+    "hash": "3d718f5f5b9dd622545a3a9dc42a129381b2dc3501bda7ecaa55e49ce2d9a1f6",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
         "regex": "(?<main>[\\d.]+)-locietta-WSL2-xanmod(?<xanmod>[\\d.]+)",
