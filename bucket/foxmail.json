@@ -1,0 +1,32 @@
+{
+    "homepage": "https://www.foxmail.com/",
+    "description": "你的邮件，现在有了新看法。",
+    "version": "7.2.25.178",
+    "url": "https://www.foxmail.com/win/download",
+    "hash": "474216af35a22aa4ff187d83908f6051b7989968a77e0ad21b54f2c1252121d2",
+    "pre_install": [
+        "$file = 'FMStorage.list'",
+        "if (!(Test-Path \"$persist_dir\\$file\")) {",
+        "    Write-Host 'File' $file 'does not exists. Creating.' -f Yellow",
+        "    $CONT = @('')",
+        "    Set-Content \"$dir\\$file\" ($CONT -join \"`r`n\") -Encoding Ascii",
+        "}"
+    ],
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "persist": ["Storage", "Global", "FMStorage.list"],
+    "checkver": {
+        "script": [
+            "$dl_url = 'https://www.foxmail.com/win/download'",
+            "$dl = cache_path 'foxmail' 'unknown' $dl_url",
+            "Invoke-WebRequest $dl_url -OutFile $dl",
+            "$ver = (Get-Item $dl).VersionInfo.ProductVersion",
+            "Move-Item -Force $dl (cache_path 'foxmail' $ver $dl_url)",
+            "$ver"
+        ],
+        "regex": "(\\S+)"
+    },
+    "autoupdate": {
+        "url": "https://www.foxmail.com/win/download"
+    },
+    "shortcuts": [["Foxmail.exe", "Foxmail"]]
+}
