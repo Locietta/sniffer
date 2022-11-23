@@ -30,7 +30,7 @@
     ],
     "version": "6.0.9-1.1",
     "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.0.9-locietta-WSL2-xanmod1.1/bzImage-skylake",
-    "hash": "75c53b90178c0c25ecdbab9c1f349bf20ba0181e0c99395cf094ad8b67d36fa8",
+    "hash": "ebbbcc5d65e8ec968ddee1ce000a7e808c958a5dc1ce6cd837f05d6e9be9c5b8",
     "checkver": {
         "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
         "regex": "(?<main>[\\d.]+)-locietta-WSL2-xanmod(?<xanmod>[\\d.]+)",
