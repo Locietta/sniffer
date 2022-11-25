@@ -13,20 +13,26 @@
         "}"
     ],
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
-    "persist": ["Storage", "Global", "FMStorage.list"],
+    "persist": [
+        "Storage",
+        "Global",
+        "FMStorage.list"
+    ],
     "checkver": {
         "script": [
             "$dl_url = 'https://www.foxmail.com/win/download'",
-            "$dl = cache_path 'foxmail' 'unknown' $dl_url",
-            "Invoke-WebRequest $dl_url -OutFile $dl",
-            "$ver = (Get-Item $dl).VersionInfo.ProductVersion",
-            "Move-Item -Force $dl (cache_path 'foxmail' $ver $dl_url)",
-            "$ver"
+            "$header = Invoke-WebRequest -Method Head -Uri $dl_url",
+            "$header.BaseResponse.RequestMessage.RequestUri.OriginalString"
         ],
-        "regex": "(\\S+)"
+        "regex": "FoxmailSetup_([\\d.]+).exe"
     },
     "autoupdate": {
         "url": "https://www.foxmail.com/win/download"
     },
-    "shortcuts": [["Foxmail.exe", "Foxmail"]]
+    "shortcuts": [
+        [
+            "Foxmail.exe",
+            "Foxmail"
+        ]
+    ]
 }
