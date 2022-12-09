@@ -20,33 +20,26 @@
                 "Bin"
             ],
             "post_install": [
-                "if ($global) { # check if global install",
-                "$vk_explicit_reg_path = 'HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
-                "if (!$(Test-Path $vk_explicit_reg_path)) { $null = New-Item -Path $vk_explicit_reg_path -Force }",
+                "$reg_root = if ($global) { [Microsoft.Win32.Registry]::LocalMachine } else { [Microsoft.Win32.Registry]::CurrentUser }",
+                "$vk_explicit_reg_path = 'SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
                 "$vulkan_bin = \"$dir\\Bin\"",
                 "$vk_layers = Get-ChildItem -Path $vulkan_bin -Filter '*.json'",
-                "$installed_layers = Get-Item -Path $vk_explicit_reg_path | Select-Object -ExpandProperty Property",
+                "$vk_explicit_reg = $reg_root.CreateSubKey($vk_explicit_reg_path)",
                 "foreach ($vk_layer in $vk_layers) {",
-                "    if ($vk_layer -notin $installed_layers) {",
-                "        $null = New-ItemProperty -Path $vk_explicit_reg_path -Name $vk_layer -PropertyType DWord -Value 0",
-                "    }",
-                "} } else {",
-                "     Write-Host 'WARNING: VK layers provided by Khronos is not registered. They are registered only for global installation.' -f Yellow",
-                "     Write-Host 'If you need them, reinstall $app globally. Or manually add them to HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers with regedit.' -f Yellow",
-                "}"
+                "    $vk_explicit_reg.SetValue($vk_layer, 0, [Microsoft.Win32.RegistryValueKind]::DWord)",
+                "}",
+                "$vk_explicit_reg.Close()"
             ],
             "pre_uninstall": [
-                "if ($global) { # check if global install",
-                "$vk_explicit_reg_path = 'HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
-                "$vulkan_bin = \"$globaldir\\apps\\$app\\current\\Bin\"",
+                "$reg_root = if ($global) { [Microsoft.Win32.Registry]::LocalMachine } else { [Microsoft.Win32.Registry]::CurrentUser }",
+                "$vk_explicit_reg_path = 'SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
+                "$vulkan_bin = if ($global) { \"$globaldir\\apps\\$app\\current\\Bin\" } else { \"$dir\\Bin\" }",
                 "$vk_layers = Get-ChildItem -Path $vulkan_bin -Filter '*.json'",
-                "$installed_layers = Get-Item -Path $vk_explicit_reg_path | Select-Object -ExpandProperty Property",
+                "$vk_explicit_reg = $reg_root.CreateSubKey($vk_explicit_reg_path)",
                 "foreach ($vk_layer in $vk_layers) {",
-                "    if ($vk_layer -in $installed_layers) {",
-                "        $null = Remove-ItemProperty -Path $vk_explicit_reg_path -Name $vk_layer",
-                "    }",
-                "} }",
-                "# this script runs only at global install"
+                "    $vk_explicit_reg.DeleteValue($vk_layer, $false)",
+                "}",
+                "$vk_explicit_reg.Close()"
             ]
         },
         "32bit": {
@@ -54,33 +47,26 @@
                 "Bin32"
             ],
             "post_install": [
-                "if ($global) { # check if global install",
-                "$vk_explicit_reg_path = 'HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
-                "if (!$(Test-Path $vk_explicit_reg_path)) { $null = New-Item -Path $vk_explicit_reg_path -Force }",
+                "$reg_root = if ($global) { [Microsoft.Win32.Registry]::LocalMachine } else { [Microsoft.Win32.Registry]::CurrentUser }",
+                "$vk_explicit_reg_path = 'SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
                 "$vulkan_bin = \"$dir\\Bin32\"",
                 "$vk_layers = Get-ChildItem -Path $vulkan_bin -Filter '*.json'",
-                "$installed_layers = Get-Item -Path $vk_explicit_reg_path | Select-Object -ExpandProperty Property",
+                "$vk_explicit_reg = $reg_root.CreateSubKey($vk_explicit_reg_path)",
                 "foreach ($vk_layer in $vk_layers) {",
-                "    if ($vk_layer -notin $installed_layers) {",
-                "        $null = New-ItemProperty -Path $vk_explicit_reg_path -Name $vk_layer -PropertyType DWord -Value 0",
-                "    }",
-                "} } else {",
-                "     Write-Host 'WARNING: VK layers provided by Khronos is not registered. They are registered only for global installation.' -f Yellow",
-                "     Write-Host 'If you need them, reinstall $app globally. Or manually add them to HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers with regedit.' -f Yellow",
-                "}"
+                "    $vk_explicit_reg.SetValue($vk_layer, 0, [Microsoft.Win32.RegistryValueKind]::DWord)",
+                "}",
+                "$vk_explicit_reg.Close()"
             ],
             "pre_uninstall": [
-                "if ($global) { # check if global install",
-                "$vk_explicit_reg_path = 'HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
-                "$vulkan_bin = \"$globaldir\\apps\\$app\\current\\Bin32\"",
+                "$reg_root = if ($global) { [Microsoft.Win32.Registry]::LocalMachine } else { [Microsoft.Win32.Registry]::CurrentUser }",
+                "$vk_explicit_reg_path = 'SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
+                "$vulkan_bin = if ($global) { \"$globaldir\\apps\\$app\\current\\Bin32\" } else { \"$dir\\Bin32\" }",
                 "$vk_layers = Get-ChildItem -Path $vulkan_bin -Filter '*.json'",
-                "$installed_layers = Get-Item -Path $vk_explicit_reg_path | Select-Object -ExpandProperty Property",
+                "$vk_explicit_reg = $reg_root.CreateSubKey($vk_explicit_reg_path)",
                 "foreach ($vk_layer in $vk_layers) {",
-                "    if ($vk_layer -in $installed_layers) {",
-                "        $null = Remove-ItemProperty -Path $vk_explicit_reg_path -Name $vk_layer",
-                "    }",
-                "} }",
-                "# this script runs only at global install"
+                "    $vk_explicit_reg.DeleteValue($vk_layer, $false)",
+                "}",
+                "$vk_explicit_reg.Close()"
             ]
         }
     },
