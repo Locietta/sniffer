@@ -30,7 +30,7 @@
             "pre_uninstall": [
                 "$reg_root = if ($global) { [Microsoft.Win32.Registry]::LocalMachine } else { [Microsoft.Win32.Registry]::CurrentUser }",
                 "$vk_explicit_reg_path = 'SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
-                "$vulkan_bin = if ($global) { \"$globaldir\\apps\\$app\\current\\Bin\" } else { \"$dir\\Bin\" }",
+                "$vulkan_bin = if ($global) { \"$globaldir\\apps\\$app\\current\\Bin\" } else { \"$scoopdir\\apps\\$app\\current\\Bin\" }",
                 "$vk_layers = Get-ChildItem -Path $vulkan_bin -Filter '*.json'",
                 "$vk_explicit_reg = $reg_root.CreateSubKey($vk_explicit_reg_path)",
                 "foreach ($vk_layer in $vk_layers) {",
@@ -55,7 +55,7 @@
             "pre_uninstall": [
                 "$reg_root = if ($global) { [Microsoft.Win32.Registry]::LocalMachine } else { [Microsoft.Win32.Registry]::CurrentUser }",
                 "$vk_explicit_reg_path = 'SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers'",
-                "$vulkan_bin = if ($global) { \"$globaldir\\apps\\$app\\current\\Bin32\" } else { \"$dir\\Bin32\" }",
+                "$vulkan_bin = if ($global) { \"$globaldir\\apps\\$app\\current\\Bin32\" } else { \"$scoopdir\\apps\\$app\\current\\Bin32\" }",
                 "$vk_layers = Get-ChildItem -Path $vulkan_bin -Filter '*.json'",
                 "$vk_explicit_reg = $reg_root.CreateSubKey($vk_explicit_reg_path)",
                 "foreach ($vk_layer in $vk_layers) {",
