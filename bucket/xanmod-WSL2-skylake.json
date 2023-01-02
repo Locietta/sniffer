@@ -1,6 +1,6 @@
 {
     "homepage": "https://github.com/Locietta/xanmod-kernel-WSL2",
-    "license": "MIT",
+    "license": "GPL-2.0",
     "extract_dir": "",
     "bin": "",
     "post_install": [
