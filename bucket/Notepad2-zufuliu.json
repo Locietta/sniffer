@@ -1,9 +1,9 @@
 {
     "homepage": "https://github.com/zufuliu/notepad2",
     "license": "BSD 3-Clause",
-    "version": "4.22.11r4478",
-    "url": "https://github.com/zufuliu/notepad2/releases/download/v4.22.11r4478/Notepad2_i18n_AVX2_v4.22.11r4478.zip",
-    "hash": "ceace73a5496fbb0281331f92512ff1e52bbb5182a44bf00b39b9f068e34d97f",
+    "version": "4.23.01r4584",
+    "url": "https://github.com/zufuliu/notepad2/releases/download/v4.23.01r4584/Notepad2_i18n_AVX2_v4.23.01r4584.zip",
+    "hash": "dadb9faf0896220e99ba8848816e1d8f5f4ea9b013d2303ea1c02140be891472",
     "bin": [
         "Notepad2.exe",
         "metapath.exe"
