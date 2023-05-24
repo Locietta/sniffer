@@ -34,8 +34,7 @@
     "hash": "86244f2a2827b95fe937b7b1c315c6d5ce3b107e3ca92ff2df95d87e983ad6e8",
     "checkver": {
         "script": [
-            "$LTS_MAJOR_MINOR = [Regex]::Matches($(curl.exe -s https://www.kernel.org), '\\S*longterm\\S*\\s*[^\\d]*(\\d*\\.\\d*)')[0].Groups[1].Value",
-            "$LATEST = ((curl.exe -sL -H \"Authorization: Bearer $(Get-GitHubToken)\" https://api.github.com/repos/Locietta/xanmod-kernel-WSL2/tags?per_page=60 | ConvertFrom-Json).name | Select-String $LTS_MAJOR_MINOR -NotMatch)[0]",
+            "$LATEST = ((curl.exe -sL -H \"Authorization: Bearer $(Get-GitHubToken)\" https://api.github.com/repos/Locietta/xanmod-kernel-WSL2/tags?per_page=60 | ConvertFrom-Json).name | Select-String 'lts' -NotMatch)[0]",
             "$LATEST"
         ],
         "regex": "(?<main>[\\d.]+)-locietta-WSL2-xanmod(?<xanmod>[\\d.]+)",
