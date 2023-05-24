@@ -32,7 +32,11 @@
     "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.3.3-locietta-WSL2-xanmod1.1/bzImage-skylake",
     "hash": "83ffde0a0b43b06c22f6ca69088f50eb04f528ac2ac9951f50f3a01845d8bb62",
     "checkver": {
-        "github": "https://github.com/Locietta/xanmod-kernel-WSL2",
+        "script": [
+            "$LTS_MAJOR_MINOR = [Regex]::Matches($(curl.exe -s https://www.kernel.org), '\\S*longterm\\S*\\s*[^\\d]*(\\d*\\.\\d*)')[0].Groups[1].Value",
+            "$LATEST = ((curl.exe -sL -H \"Authorization: Bearer $(Get-GitHubToken)\" https://api.github.com/repos/Locietta/xanmod-kernel-WSL2/tags?per_page=60 | ConvertFrom-Json).name | Select-String $LTS_MAJOR_MINOR -NotMatch)[0]",
+            "$LATEST"
+        ],
         "regex": "(?<main>[\\d.]+)-locietta-WSL2-xanmod(?<xanmod>[\\d.]+)",
         "replace": "${1}-${2}"
     },
