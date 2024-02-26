@@ -1,4 +1,4 @@
-function find_steam_game_path([string] $game_id) {
+function find_steam_game_folder([string] $game_id) {
     $steam_path = Get-ItemProperty -Path "HKCU:/Software/Valve/Steam" -Name "SteamPath" -ErrorAction Stop
     $library_folders_vdf = "$($steam_path.SteamPath)/steamapps/libraryfolders.vdf"
 

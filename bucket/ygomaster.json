@@ -12,20 +12,20 @@
     },
     "post_install": [
         ". $bucketsdir/sniffer/scripts/find_steam_game_folder.ps1",
-        "$game_path = find_steam_game_path(\"1449850\")",
+        "$game_path = find_steam_game_folder(\"1449850\")",
         "$ygomaster_path = \"$game_path\\YgoMaster\"",
         "if (Test-Path -Path $ygomaster_path) {",
         "    Remove-Item -Path $ygomaster_path -Force",
         "}",
         "# Copy Directory",
-        "Copy-Item -Recurse -Path \"$scoopdir\\apps\\$app\\current\" -Destination $ygomaster_path"
+        "Copy-Item -Recurse -Path \"$scoopdir\\apps\\$app\\current\" -Destination $ygomaster_path -Force"
     ],
     "pre_uninstall": [
         ". $bucketsdir/sniffer/scripts/find_steam_game_folder.ps1",
-        "$game_path = find_steam_game_path(\"1449850\")",
+        "$game_path = find_steam_game_folder(\"1449850\")",
         "$ygomaster_path = \"$game_path\\YgoMaster\"",
         "if (Test-Path -Path $ygomaster_path) {",
-        "    Remove-Item -Path $ygomaster_path -Force",
+        "    Remove-Item -Path $ygomaster_path -Force -Recurse",
         "}"
     ]
 }
