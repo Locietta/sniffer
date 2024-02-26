@@ -1,16 +1,16 @@
 {
-    "version": "23.0.5",
+    "version": "23.1.3",
     "description": "A fast, lightweight and extensible text editor for Windows. Useful for opening very large files.",
     "homepage": "https://www.emeditor.com/",
     "license": "Shareware",
     "architecture": {
         "64bit": {
-            "url": "https://emeditor.blob.core.windows.net/emed64_23.0.5_portable.zip",
-            "hash": "bfb6aa840e762e6791f17d0efbfefa24acffa696079c199ba7dd9b55fd2ab0f0"
+            "url": "https://download.emeditor.info/emed64_23.1.3_portable.zip",
+            "hash": "e4e1c3bfe9a912a5a1147a79ec70abc68d1239e733144a8d6fdf27cefe4e62ec"
         },
         "32bit": {
-            "url": "https://emeditor.blob.core.windows.net/emed32_23.0.5_portable.zip",
-            "hash": "3c2bd0f683f4996660f0af77a8fe37efd9dd8f2a8674c8c7654144e3cfba773c"
+            "url": "https://download.emeditor.info/emed32_23.1.3_portable.zip",
+            "hash": "435c67aa99ae4268d11757f27c9c59111d0457aa16213c95b9faa8d8198b713a"
         }
     },
     "pre_install": [
@@ -34,16 +34,20 @@
         "eePlugins.ini"
     ],
     "checkver": {
-        "url": "https://support.emeditor.com/en/downloads",
-        "regex": "<td>v([\\d.]+)"
+        "script": [
+            "$dl_url = 'https://support.emeditor.com/en/downloads/latest/portable/64'",
+            "$header = Invoke-WebRequest -Method Head -Uri $dl_url",
+            "$header.BaseResponse.RequestMessage.RequestUri.OriginalString"
+        ],
+        "regex": "emed64_([\\d.]+)_portable.zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://emeditor.blob.core.windows.net/emed64_$version_portable.zip"
+                "url": "https://download.emeditor.info/emed64_$version_portable.zip"
             },
             "32bit": {
-                "url": "https://emeditor.blob.core.windows.net/emed32_$version_portable.zip"
+                "url": "https://download.emeditor.info/emed32_$version_portable.zip"
             }
         }
     }
