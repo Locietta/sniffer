@@ -39,15 +39,15 @@
             "$header = Invoke-WebRequest -Method Head -Uri $dl_url",
             "$header.BaseResponse.RequestMessage.RequestUri.OriginalString"
         ],
-        "regex": "(?<site>[^\\s]+)/emed64_(?<version>[\\d.]+)_portable.zip"
+        "regex": "https://(?<site>[^\\s]+)/emed64_(?<version>[\\d.]+)_portable.zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "$matchSite/emed64_$version_portable.zip"
+                "url": "https://$matchSite/emed64_$version_portable.zip"
             },
             "32bit": {
-                "url": "$matchSite/emed32_$version_portable.zip"
+                "url": "https://$matchSite/emed32_$version_portable.zip"
             }
         }
     }
