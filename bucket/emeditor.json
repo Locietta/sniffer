@@ -44,10 +44,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://$matchSite/emed64_$version_portable.zip"
+                "url": "https://download.emeditor.info/emed64_$version_portable.zip"
             },
             "32bit": {
-                "url": "https://$matchSite/emed32_$version_portable.zip"
+                "url": "https://download.emeditor.info/emed32_$version_portable.zip"
             }
         }
     }
