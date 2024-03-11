@@ -1,10 +1,10 @@
 {
-    "version": "1.7.2308",
+    "version": "1.8.2403",
     "description": "The DirectX Shader Compiler project includes a compiler and related tools used to compile High-Level Shader Language (HLSL) programs into DirectX Intermediate Language (DXIL) representation. Applications that make use of DirectX for graphics, games, and computation can use it to generate shader programs.",
     "homepage": "https://github.com/microsoft/DirectXShaderCompiler",
     "license": "UIUC",
-    "url": "https://github.com/microsoft/DirectXShaderCompiler/releases/download/v1.7.2308/dxc_2023_08_14.zip",
-    "hash": "01d4c4dfa37dee21afe70cac510d63001b6b611a128e3760f168765eead1e625",
+    "url": "https://github.com/microsoft/DirectXShaderCompiler/releases/download/v1.8.2403/dxc_2024_03_07.zip",
+    "hash": "7a916a49b3ca81d803ca1bcd1ae859e7f317ce2fcf875bd34147aa2c57d1e392",
     "extract_dir": "",
     "architecture": {
         "64bit": {
