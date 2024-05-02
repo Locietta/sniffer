@@ -1,16 +1,16 @@
 {
-    "version": "24.0.0",
+    "version": "24.1.1",
     "description": "A fast, lightweight and extensible text editor for Windows. Useful for opening very large files.",
     "homepage": "https://www.emeditor.com/",
     "license": "Shareware",
     "architecture": {
         "64bit": {
-            "url": "https://download.emeditor.info/emed64_24.0.0_portable.zip",
-            "hash": "2f08f9f856c8ec33e1adb712b0435939cd20e8fdb6a85ccb29e5f9dc8daf5afe"
+            "url": "https://download.emeditor.info/emed64_24.1.1_portable.zip",
+            "hash": "ffa712eeecb6122a43d0a788debd1b222eb741c8ce37425d5489c75b23675895"
         },
         "32bit": {
-            "url": "https://download.emeditor.info/emed32_24.0.0_portable.zip",
-            "hash": "e64d7a593393a7c3ba0ec38311cb94056f525fe47dbaf37009ea969ae9d8fd07"
+            "url": "https://download.emeditor.info/emed32_24.1.1_portable.zip",
+            "hash": "63e6496a61e6033e6cf609eba2474ceaf55d5a1db587615cf26c6143010be3c0"
         }
     },
     "pre_install": [
