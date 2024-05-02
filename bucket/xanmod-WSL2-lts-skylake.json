@@ -10,8 +10,6 @@
         "$ini = Add-Type -memberDefinition @\"",
         "[DllImport(\"Kernel32\")]",
         "public static extern long WritePrivateProfileString (string section, string key, string val, string filePath);",
-        "[DllImport(\"Kernel32\")]",
-        "public static extern int GetPrivateProfileString (string section, string key, string def, StringBuilder retVal, int size, string filePath);",
         "\"@ -passthru -name CustomWSL2ProfileInstall -UsingNamespace System.Text",
         "$kernel_path=\"$dir\\bzImage-skylake\" -replace \"\\\\\", \"\\\\\" # double all back-slashess",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $kernel_path, \"$env:USERPROFILE\\.wslconfig\")"
@@ -23,8 +21,6 @@
         "$ini = Add-Type -memberDefinition @\"",
         "[DllImport(\"Kernel32\")]",
         "public static extern long WritePrivateProfileString (string section, string key, string val, string filePath);",
-        "[DllImport(\"Kernel32\")]",
-        "public static extern int GetPrivateProfileString (string section, string key, string def, StringBuilder retVal, int size, string filePath);",
         "\"@ -passthru -name CustomWSL2ProfileUninstall -UsingNamespace System.Text",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
