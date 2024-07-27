@@ -1,10 +1,10 @@
 {
-    "version": "3.5.8.249",
+    "version": "3.5.8.250",
     "description": "HMCL 是一个免费、开源的 Minecraft 启动器，允许玩家方便快捷地安装、管理、运行游戏。",
     "homepage": "https://github.com/huanghongxun/HMCL",
     "license": "GPL-3.0",
-    "url": "https://github.com/huanghongxun/HMCL/releases/download/v3.5.8.249/HMCL-3.5.8.249.exe",
-    "hash": "cabb382e42d2e277b9d9fff54c6f1316aeb1fd2efbc8e6daf0399f4512474f50",
+    "url": "https://github.com/huanghongxun/HMCL/releases/download/v3.5.8.250/HMCL-3.5.8.250.exe",
+    "hash": "4036ca9f1f823cc87415cf607b3da3707ebdfc43b23681a77f7bfeef2267a8c7",
     "bin": "HMCL.exe",
     "pre_install": "Rename-Item \"$dir\\HMCL-$version.exe\" -NewName \"$dir\\HMCL.exe\"",
     "post_install": [
