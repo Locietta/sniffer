@@ -21,8 +21,7 @@
             ]
         }
     },
-    "extract_dir": "",
-    "bin": "",
+    "env_add_path": "bin",
     "checkver": {
         "github": "https://github.com/shader-slang/slang"
     },
