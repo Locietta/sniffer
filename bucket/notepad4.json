@@ -1,9 +1,9 @@
 {
     "homepage": "https://github.com/zufuliu/notepad4",
     "license": "BSD 3-Clause",
-    "version": "24.11r5548",
-    "url": "https://github.com/zufuliu/notepad4/releases/download/v24.11r5548/Notepad4_HD_i18n_AVX2_v24.11r5548.zip",
-    "hash": "9d058e60d0a45606595adc948402a12436ea42dc5661039b16fa0c0dff1b4284",
+    "version": "25.01r5618",
+    "url": "https://github.com/zufuliu/notepad4/releases/download/v25.01r5618/Notepad4_HD_i18n_AVX2_v25.01r5618.zip",
+    "hash": "8584511e82b2c8107c800d51024555b540c424f4f212d3b164ff65050c9a7f7c",
     "bin": [
         "Notepad4.exe",
         "matepath.exe"
