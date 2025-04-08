@@ -23,9 +23,9 @@
         "\"@ -passthru -name CustomWSL2ProfileUninstall -UsingNamespace System.Text",
         "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
-    "version": "6.13.9-1.1",
-    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.13.9-locietta-WSL2-xanmod1.1/bzImage-x64v2",
-    "hash": "207ba15221c1fc7f532cceb9113f964ba450420cbbe9da94f63d2bb5b8bb97ab",
+    "version": "6.13.10-1.1",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.13.10-locietta-WSL2-xanmod1.1/bzImage-x64v2",
+    "hash": "9e9146c1ce56c666a6b13361b1856c2d0fed9988588c2dc926f574ad55447fc2",
     "checkver": {
         "script": [
             "$LATEST = ((curl.exe -sL -H \"Authorization: Bearer $(Get-GitHubToken)\" https://api.github.com/repos/Locietta/xanmod-kernel-WSL2/tags?per_page=60 | ConvertFrom-Json).name | Select-String 'lts' -NotMatch)[0]",
