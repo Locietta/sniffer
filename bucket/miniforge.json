@@ -1,5 +1,5 @@
 {
-    "version": "24.11.3-2",
+    "version": "25.3.0-1",
     "description": "A conda-forge distribution",
     "homepage": "https://github.com/conda-forge/miniforge",
     "license": "BSD-3-Clause",
@@ -12,8 +12,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/conda-forge/miniforge/releases/download/24.11.3-2/Miniforge3-24.11.3-2-Windows-x86_64.exe",
-            "hash": "dd49a51706b5005170afb99e99794f6b34e290a3f62c5974ab45908819242a6e"
+            "url": "https://github.com/conda-forge/miniforge/releases/download/25.3.0-1/Miniforge3-25.3.0-1-Windows-x86_64.exe",
+            "hash": "b14ad50d85a218268a14cad7469cabb4e5364f75d34add3792449ec935ddf3ab"
         }
     },
     "pre_install": "if ($dir -match ' ') { error 'The installation directory cannot include a space'; break}",
