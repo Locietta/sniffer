@@ -31,7 +31,7 @@
     ],
     "checkver": {
         "script": [
-            ". $bucketsdir\\sniffer\\scripts\\Get-TrueUrl.ps1",
+            ". $Dir\\..\\scripts\\Get-TrueUrl.ps1",
             "$dl_url = 'https://support.emeditor.com/en/downloads/latest/portable/64'",
             "$true_url = Get-TrueUrl $dl_url",
             "$true_url"
