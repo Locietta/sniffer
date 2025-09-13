@@ -21,9 +21,10 @@
     ],
     "checkver": {
         "script": [
+            ". $bucketsdir\\sniffer\\scripts\\Get-TrueUrl.ps1",
             "$dl_url = 'https://www.foxmail.com/win/download'",
-            "$header = Invoke-WebRequest -Method Head -Uri $dl_url",
-            "$header.BaseResponse.RequestMessage.RequestUri.OriginalString"
+            "$true_url = Get-TrueUrl $dl_url",
+            "$true_url"
         ],
         "regex": "FoxmailSetup_([\\d.]+).exe"
     },
