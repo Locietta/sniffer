@@ -3,25 +3,13 @@
     "description": "Xanmod Kernel for WSL2.",
     "license": "GPL-2.0",
     "post_install": [
-        "#########################################",
-        "# set `.wslconfig` to use custom kernel #",
-        "#########################################",
-        "$ini = Add-Type -memberDefinition @\"",
-        "[DllImport(\"Kernel32\")]",
-        "public static extern long WritePrivateProfileString (string section, string key, string val, string filePath);",
-        "\"@ -passthru -name CustomWSL2ProfileInstall -UsingNamespace System.Text",
+        ". $bucketsdir\\$bucket\\scripts\\IniFile.ps1",
         "$kernel_path=\"$original_dir\\bzImage-skylake\" -replace \"\\\\\", \"\\\\\" # double all back-slashess",
-        "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $kernel_path, \"$env:USERPROFILE\\.wslconfig\")"
+        "$null = [IniFile]::WritePrivateProfileString(\"wsl2\", \"kernel\", $kernel_path, \"$env:USERPROFILE\\.wslconfig\")"
     ],
     "post_uninstall": [
-        "##########################################",
-        "# recover `.wslconfig` to default kernel #",
-        "##########################################",
-        "$ini = Add-Type -memberDefinition @\"",
-        "[DllImport(\"Kernel32\")]",
-        "public static extern long WritePrivateProfileString (string section, string key, string val, string filePath);",
-        "\"@ -passthru -name CustomWSL2ProfileUninstall -UsingNamespace System.Text",
-        "$null = $ini::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
+        ". $bucketsdir\\$($install.bucket)\\scripts\\IniFile.ps1",
+        "$null = [IniFile]::WritePrivateProfileString(\"wsl2\", \"kernel\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
     "version": "6.17.7-1.1",
     "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.17.7-locietta-WSL2-xanmod1.1/bzImage-skylake",
