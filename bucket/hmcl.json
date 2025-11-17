@@ -1,10 +1,10 @@
 {
-    "version": "3.6.18",
-    "description": "HMCL 是一个免费、开源的 Minecraft 启动器，允许玩家方便快捷地安装、管理、运行游戏。",
-    "homepage": "https://github.com/huanghongxun/HMCL",
+    "version": "3.7.5",
+    "description": "A Minecraft Launcher which is multi-functional, cross-platform and popular",
+    "homepage": "https://github.com/HMCL-dev/HMCL",
     "license": "GPL-3.0",
-    "url": "https://github.com/huanghongxun/HMCL/releases/download/release-3.6.18/HMCL-3.6.18.exe",
-    "hash": "57e8a8363b1c5623e1f76ea3df27d835a749513191a99e0b0d4b32d60fbe1fba",
+    "url": "https://github.com/HMCL-dev/HMCL/releases/download/v3.7.5/HMCL-3.7.5.exe",
+    "hash": "986c85fa83366d987e232953e6d8c75b79a9182b71a242796398b666ffd3ebcd",
     "bin": "HMCL.exe",
     "pre_install": "Rename-Item \"$dir\\HMCL-$version.exe\" -NewName \"$dir\\HMCL.exe\"",
     "post_install": [
@@ -12,23 +12,20 @@
         "    Copy-Item -Path \"$persist_dir\\hmcl.json\" -Destination \"$dir\\hmcl.json\"",
         "}"
     ],
-    "shortcuts": [
-        [
-            "HMCL.exe",
-            "HMCL"
-        ]
-    ],
-    "persist": ".minecraft",
+    "suggest": {
+        "JDK": ["java/oraclejdk", "java/openjdk"]
+    },
+    "shortcuts": [["HMCL.exe", "HMCL"]],
+    "persist": [".minecraft"],
     "pre_uninstall": [
         "if (Test-Path \"$dir\\hmcl.json\") {",
         "Copy-Item -Path \"$dir\\hmcl.json\" -Destination \"$persist_dir\\hmcl.json\"",
         "}"
     ],
     "checkver": {
-        "github": "https://github.com/huanghongxun/HMCL",
-        "regex": "tag/release-([\\d.]+)"
+        "github": "https://github.com/HMCL-dev/HMCL"
     },
     "autoupdate": {
-        "url": "https://github.com/huanghongxun/HMCL/releases/download/release-$version/HMCL-$version.exe"
+        "url": "https://github.com/HMCL-dev/HMCL/releases/download/v$version/HMCL-$version.exe"
     }
 }
