@@ -2,9 +2,9 @@
     "homepage": "https://www.foxmail.com/",
     "license": "Proprietary",
     "description": "Foxmail like you've never seen it before.",
-    "version": "7.2.25.508",
+    "version": "7.2.25.528",
     "url": "https://www.foxmail.com/win/download#/dl.7z",
-    "hash": "1269e18259868eccc7c51ec5b0aee5f608569b07670ea62b322fc94ace43fd59",
+    "hash": "56a5b875b7a74c66d540c67ffb2edbf8648044039e5722d632b3f7c6c6944632",
     "pre_install": [
         "$file = 'FMStorage.list'",
         "if (!(Test-Path \"$persist_dir\\$file\")) {",
