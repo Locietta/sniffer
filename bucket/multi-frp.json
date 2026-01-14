@@ -1,0 +1,20 @@
+{
+    "license": "MIT",
+    "homepage": "https://github.com/Locietta/multi-frp",
+    "version": "0.1.0",
+    "bin": [["multi-frp-windows-amd64.exe", "multi-frp"]],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Locietta/multi-frp/releases/download/v0.1.0/multi-frp-windows-amd64.exe",
+            "hash": "83a40fb617a2f7a6b65264c2334b736d008944f9747d82b55e793e8260a85080"
+        }
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Locietta/multi-frp/releases/download/v$version/multi-frp-windows-amd64.exe"
+            }
+        }
+    }
+}
