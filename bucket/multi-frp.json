@@ -2,7 +2,7 @@
     "license": "MIT",
     "homepage": "https://github.com/Locietta/multi-frp",
     "version": "0.2.0",
-    "bin": [["multi-frp-windows-amd64.exe", "multi-frp"]],
+    "bin": [["multi-frp-windows-amd64-v0.2.0.exe", "multi-frp"]],
     "architecture": {
         "64bit": {
             "url": "https://github.com/Locietta/multi-frp/releases/download/v0.2.0/multi-frp-windows-amd64-v0.2.0.exe",
@@ -15,6 +15,7 @@
             "64bit": {
                 "url": "https://github.com/Locietta/multi-frp/releases/download/v$version/multi-frp-windows-amd64-v$version.exe"
             }
-        }
+        },
+        "bin": [["multi-frp-windows-amd64-v$version.exe", "multi-frp"]]
     }
 }
