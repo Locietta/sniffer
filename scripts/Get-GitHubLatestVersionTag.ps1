@@ -74,6 +74,3 @@ function Get-GitHubLatestVersionTag {
         return $release.tag_name
     }
 }
-
-
-
