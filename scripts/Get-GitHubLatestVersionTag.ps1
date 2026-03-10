@@ -15,7 +15,7 @@ function Get-GitHubLatestVersionTag {
             'Accept'     = 'application/vnd.github+json'
             'User-Agent' = 'scoop-sniffer'
         }
-        
+
         if (Get-Command -Name Get-GitHubToken -ErrorAction SilentlyContinue) {
             $token = Get-GitHubToken
             if ($token) {
