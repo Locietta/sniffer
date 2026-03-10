@@ -1,9 +1,13 @@
+name: Excavator
 on:
   workflow_dispatch:
   schedule:
     # run every 4 hours
-    - cron: '20 */4 * * *'
-name: Excavator
+    - cron: "20 */4 * * *"
+
+env:
+  SCOOP_BRANCH: develop
+
 jobs:
   excavate:
     name: Excavate
