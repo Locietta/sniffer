@@ -7,7 +7,11 @@ function Get-GitHubLatestVersionTag {
     param(
         [Parameter(Mandatory = $true, Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
         [Alias('Repository', 'Repo')]
-        [string]$RepositoryIdentifier
+        [string]$RepositoryIdentifier,
+
+        [Parameter(Mandatory = $false)]
+        [Alias('ExcludeTagRegex', 'TagExclude')]
+        [string]$TagExcludeRegex
     )
 
     begin {
@@ -49,28 +53,35 @@ function Get-GitHubLatestVersionTag {
         $repo = $repo -replace '\.git$', ''
         $slug = "$owner/$repo"
 
-        $endpoint = "https://api.github.com/repos/$slug/releases?per_page=1"
+        $page = 1
+        $perPage = 30
 
-        try {
-            $response = Invoke-RestMethod -Method Get -Uri $endpoint -Headers $headers -ErrorAction Stop
-        } catch {
-            throw "Failed to query GitHub releases for '$slug': $($_.Exception.Message)"
+        while ($true) {
+            $endpoint = "https://api.github.com/repos/$slug/releases?per_page=$perPage&page=$page"
+
+            try {
+                $response = Invoke-RestMethod -Method Get -Uri $endpoint -Headers $headers -ErrorAction Stop
+            } catch {
+                throw "Failed to query GitHub releases for '$slug': $($_.Exception.Message)"
+            }
+
+            if (-not $response) {
+                throw "No releases found for '$slug'."
+            }
+
+            $release = $response | Where-Object {
+                $_.tag_name -and (-not $TagExcludeRegex -or $_.tag_name -notmatch $TagExcludeRegex)
+            } | Select-Object -First 1
+
+            if ($release) {
+                return $release.tag_name
+            }
+
+            if ($response.Count -lt $perPage) {
+                throw "No releases found for '$slug' matching the provided filter."
+            }
+
+            $page++
         }
-
-        $release = if ($response -is [array]) {
-            $response | Select-Object -First 1
-        } else {
-            $response
-        }
-
-        if (-not $release) {
-            throw "No releases found for '$slug'."
-        }
-
-        if (-not $release.tag_name) {
-            throw "GitHub response for '$slug' did not include a tag name."
-        }
-
-        return $release.tag_name
     }
 }
