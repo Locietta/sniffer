@@ -10,6 +10,11 @@
         "$vhdx_path = $vhdx_file -replace \"\\\\\", \"\\\\\" # double all back-slashess",
         "$null = [IniFile]::WritePrivateProfileString(\"wsl2\", \"kernelModules\", $vhdx_path, \"$env:USERPROFILE\\.wslconfig\")"
     ],
+    "pre_uninstall": [
+        "$vhdx_file = \"$dir\\bzImage-x64v2-addons.vhdx\"",
+        ". $bucketsdir\\$($install.bucket)\\scripts\\Set-VhdxAcl.ps1",
+        "Reset-VhdxAcl -Path $vhdx_file"
+    ],
     "post_uninstall": [
         ". $bucketsdir\\$($install.bucket)\\scripts\\IniFile.ps1",
         "$null = [IniFile]::WritePrivateProfileString(\"wsl2\", \"kernelModules\", $null, \"$env:USERPROFILE\\.wslconfig\")"

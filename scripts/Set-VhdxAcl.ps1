@@ -31,6 +31,25 @@ function Set-VhdxAcl {
         '*S-1-15-2-2:(RX)' | Out-Null
 }
 
-# Usage:
+# Revert the locked-down DACL so scoop's uninstall can delete the vhdx.
+# /reset clears the explicit ACEs and re-enables inheritance, restoring the
+# parent dir's user-FullControl (which Remove-Item needs). Owner has WRITE_DAC
+# so this works without elevation.
+function Reset-VhdxAcl {
+    param(
+        [Parameter(Mandatory)]
+        [string]$Path
+    )
+
+    if (Test-Path -LiteralPath $Path) {
+        & icacls.exe $Path /reset | Out-Null
+    }
+}
+
+# Usage (post_install):
 # . $bucketsdir\$bucket\scripts\Set-VhdxAcl.ps1
 # Set-VhdxAcl -Path $vhdx_file
+#
+# Usage (pre_uninstall):
+# . $bucketsdir\$($install.bucket)\scripts\Set-VhdxAcl.ps1
+# Reset-VhdxAcl -Path $vhdx_file
