@@ -14,9 +14,9 @@
     "suggest": {
         "modules": "sniffer/xanmod-WSL2-addons-lts-zen3"
     },
-    "version": "6.18.36-1.2",
-    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.18.36-locietta-WSL2-xanmod1.2-lts/bzImage-zen3",
-    "hash": "bd5aeba303256ae90def41ceafc54486d6d64f60b5f78b8c42096dd04f0da7c5",
+    "version": "6.18.37-1.1",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.18.37-locietta-WSL2-xanmod1.1-lts/bzImage-zen3",
+    "hash": "ac6cb03f2b352c99b8a9cd417d4184b71126ebfa5f0427c269569621d9e993cc",
     "checkver": {
         "script": [
             "$LATEST = ((curl.exe -sL -H \"Authorization: Bearer $(Get-GitHubToken)\" https://api.github.com/repos/Locietta/xanmod-kernel-WSL2/tags?per_page=60 | ConvertFrom-Json).name | Select-String 'lts')[0]",
