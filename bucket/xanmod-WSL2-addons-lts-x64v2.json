@@ -14,9 +14,9 @@
         ". $bucketsdir\\$($install.bucket)\\scripts\\IniFile.ps1",
         "$null = [IniFile]::WritePrivateProfileString(\"wsl2\", \"kernelModules\", $null, \"$env:USERPROFILE\\.wslconfig\")"
     ],
-    "version": "6.18.37-1.1",
-    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.18.37-locietta-WSL2-xanmod1.1-lts/bzImage-x64v2-addons.vhdx.7z",
-    "hash": "e4f4bd33899ddadf3b465aa65c82a5d374516c3cae96378c0cb67a450bc20794",
+    "version": "6.18.38-1.1",
+    "url": "https://github.com/Locietta/xanmod-kernel-WSL2/releases/download/6.18.38-locietta-WSL2-xanmod1.1-lts/bzImage-x64v2-addons.vhdx.7z",
+    "hash": "9ad71f727bf65118fa7105aa715de1d6fee6badaf3a8d3ff2aa98f0bc086c518",
     "checkver": {
         "script": [
             "$LATEST = ((curl.exe -sL -H \"Authorization: Bearer $(Get-GitHubToken)\" https://api.github.com/repos/Locietta/xanmod-kernel-WSL2/tags?per_page=60 | ConvertFrom-Json).name | Select-String 'lts')[0]",
